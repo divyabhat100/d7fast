@@ -1,0 +1,12 @@
+name = WEM core
+description = Tracks user events throughout the site.
+core = 7.x
+configure = admin/config/workflow/wem
+package = Web Engagement Management
+
+files[] = wem.test
+
+dependencies[] = entity
+
+scripts[] = jquery.Storage.js
+scripts[] = wem.js

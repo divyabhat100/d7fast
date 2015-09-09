@@ -1,0 +1,12 @@
+name = WEM segments
+description = Enables user segmentation based on tracked events.
+core = 7.x
+
+files[] = wem_segment.analyze.inc
+files[] = wem_segment.test
+
+scripts[] = wem_segment.js
+stylesheets[all][] = wem_segment.css
+dependencies[] = wem
+
+package = Web Engagement Management
