@@ -1,0 +1,36 @@
+<?php
+/**
+* Implements hook_block_info().
+*/
+function ipbased_content_block_info() {
+  $blocks = array();
+
+  $blocks['ipbased_content_display'] = array(
+    'info' => t('Display Content Based on Country'),
+  );
+
+  return $blocks;
+}
+
+/**
+* Implements hook_block_view().
+*/
+function ipbased_content_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'ipbased_content_display':
+      $block['subject'] = '';
+      $block['content'] = _ipbased_content_render_data();
+      break;
+  }
+
+  return $block;
+}
+
+function _ipbased_content_render_data() {
+  $ip = $_SERVER['REMOTE_ADDR'];
+  $country_code = ip2country_get_country($ip);	
+  $output = t('Hello world');
+  return $output."##".$country_code;
+}
