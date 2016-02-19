@@ -1,4 +1,4 @@
-name = Country IP Based content display
+name = Country IP Based content display ---
 description = Display content based on country IP.
 package = Personalization
 core = 7.x
